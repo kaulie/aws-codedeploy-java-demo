@@ -15,7 +15,8 @@ phases:
     commands:
       - echo Build completed on `date`
       - pwd
-      - ll
+      - ls
+      - cd target
       - tar -cf hello-ops-0.1-SNAPSHOT.jar.tar hello-ops-0.1-SNAPSHOT.jar
 artifacts:
   files:
