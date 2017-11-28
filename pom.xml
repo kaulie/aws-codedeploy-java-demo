@@ -20,12 +20,6 @@
       <version>${jettyVersion}</version>
     </dependency>
   </dependencies>
-    <distributionManagement>
-        <repository>
-            <id>meituan-nexus-releases</id>
-            <url>http://maven.sankuai.com/nexus/content/repositories/snapshots/</url>
-        </repository>
-    </distributionManagement> 
   <build>
     <plugins>
       <plugin>
