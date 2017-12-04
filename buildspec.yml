@@ -17,7 +17,8 @@ phases:
       - pwd
       - ls
       - cd target
+      - ls
       - tar -cf hello-ops-0.1-SNAPSHOT.jar.tar hello-ops-0.1-SNAPSHOT.jar
 artifacts:
   files:
-    - target/hello-ops-0.1-SNAPSHOT.jar
+    - target/hello-ops-0.1-SNAPSHOT.jar.tar
