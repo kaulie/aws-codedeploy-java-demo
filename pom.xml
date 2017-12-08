@@ -28,17 +28,37 @@
         <artifactId>jetty-maven-plugin</artifactId>
         <version>${jettyVersion}</version>
       </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.1</version>
-        <executions>
-          <execution><goals><goal>java</goal></goals></execution>
-        </executions>
-        <configuration>
-          <mainClass>com.meituan.ops.example.HelloOps</mainClass>
-        </configuration>
-      </plugin>
+       <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-compiler-plugin</artifactId>
+         <configuration>
+           <source>1.8</source>
+           <target>1.8</target>
+         </configuration>
+       </plugin>
+       <plugin>
+           <artifactId>maven-assembly-plugin</artifactId>
+           <configuration>
+               <appendAssemblyId>false</appendAssemblyId>
+               <descriptorRefs>
+                   <descriptorRef>jar-with-dependencies</descriptorRef>
+               </descriptorRefs>
+               <archive>
+                   <manifest>
+                       <mainClass>com.meituan.ops.example.HelloOps</mainClass>
+                   </manifest>
+               </archive>
+           </configuration>
+           <executions>
+               <execution>
+                   <id>make-assembly</id>
+                   <phase>package</phase>
+                   <goals>
+                       <goal>assembly</goal>
+                   </goals>
+               </execution>
+           </executions>
+       </plugin>
     </plugins>
   </build>
 </project>
