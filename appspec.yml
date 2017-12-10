@@ -1,11 +1,11 @@
 version: 0.0
 os: linux
 files:
-  - source: hello-ops-0.1-SNAPSHOT.jar.tar
+  - source: hello-ops-0.1-SNAPSHOT.jar
     destination: /opt/aws-demo/
 hooks:
   AfterInstall:
-    - location: tar xvf hello-ops-0.1-SNAPSHOT.jar.tar
+    - location: tar xvf hello-ops-0.1-SNAPSHOT.jar
       timeout: 1000
   ApplicationStart:
     - location: java -jar /opt/aws-demo/hello-ops-0.1-SNAPSHOT.jar
