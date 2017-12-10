@@ -3,7 +3,9 @@ os: linux
 files:
   - source: hello-ops-0.1-SNAPSHOT.jar
     destination: /opt/aws-demo/
+  - source: startapp.sh
+    destination: /opt/aws-demo/
 hooks:
   ApplicationStart:
-    - location: java -jar /opt/aws-demo/hello-ops-0.1-SNAPSHOT.jar
+    - location: /opt/aws-demo/startapp.sh
       timeout: 3600

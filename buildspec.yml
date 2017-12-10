@@ -16,7 +16,8 @@ phases:
       - echo Build completed on `date`
       - pwd
       - cp appspec.yml target/appspec.yml
-      - cd target && (tar -cf hello-ops-0.1-SNAPSHOT.jar.tar hello-ops-0.1-SNAPSHOT.jar appspec.yml)
+      - cp startapp.sh target/startapp.yml
+      - cd target && (tar -cf hello-ops-0.1-SNAPSHOT.jar.tar hello-ops-0.1-SNAPSHOT.jar appspec.yml startapp.sh)
 artifacts:
   files:
     - target/hello-ops-0.1-SNAPSHOT.jar.tar
